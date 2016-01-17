@@ -1,7 +1,21 @@
-(page "index.html")
+(page "index.html"
+  (:require [cljsjs.auth0-lock]))
+
+(def client-id "8zU02eL8TPsQKEuErHGRt8UCrbze9sb1")
+(def domain "estimate-work.au.auth0.com")
+(def Auth0Lock (js/Auth0Lock. client-id domain))
+
+(defelem lock
+  []
+  (input
+    :id "login"
+    :type "submit"
+    :value "login"
+    :click #(.show Auth0Lock)))
 
 (html
   (head
     (link :href "app.css" :rel "stylesheet"))
   (body
-    (h1 "Hello, Hoplon!")))
+    (h1 "Hello, Hoplon!")
+    (lock)))
