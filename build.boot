@@ -5,8 +5,7 @@
                   [hoplon/hoplon             "6.0.0-alpha11"]
                   [org.clojure/clojure       "1.7.0"]
                   [org.clojure/clojurescript "1.7.228"]
-                  [tailrecursion/boot-jetty  "0.1.3"]
-                  [cljsjs/auth0-lock "8.1.5-0"]]
+                  [tailrecursion/boot-jetty  "0.1.3"]]
   :source-paths #{"src"}
   :asset-paths  #{"assets"})
 
