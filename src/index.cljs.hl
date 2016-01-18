@@ -2,15 +2,17 @@
 
 (def client-id "8zU02eL8TPsQKEuErHGRt8UCrbze9sb1")
 (def domain "estimate-work.au.auth0.com")
+(def Auth0Lock (memoize #(js/Auth0Lock. client-id domain)))
 
 (defelem lock
   []
-  (input
-    :id "login"
-    :type "submit"
-    :value "login"
-    :click (fn []
-             (.show (js/Auth0Lock. client-id domain)))))
+  (div
+    (script :src "http://cdn.auth0.com/js/lock-8.1.min.js")
+    (input
+      :id "login"
+      :type "submit"
+      :value "login"
+      :click (fn [] (.show (Auth0Lock))))))
 
 (html
   (head
